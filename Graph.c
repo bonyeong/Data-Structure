@@ -163,6 +163,7 @@ int destroyGraph(VertexHead* v)
 		}
 		return 0;
 	}
+	return 0;
 }
 
 int insertVertex(VertexHead *v, int key)
@@ -464,7 +465,7 @@ void depthFS(VertexHead*v, int key)
 	if ((v + i)->Head == NULL)
 	{
 		printf("값을 찾을 수가 없습니다.\n");
-		return;
+		return ;
 	}
 
 	i = 0;
@@ -496,7 +497,7 @@ void breadthFS(int key, VertexHead* v) {
 	if ((v + i)->Head == NULL)
 	{
 		printf("값을 찾을 수가 없습니다.\n");
-		return 0;
+		return ;
 	}
 
 	i = 0;
@@ -507,11 +508,11 @@ void breadthFS(int key, VertexHead* v) {
 	while ((v+i)->Head!=NULL)
 	{
 		key = deleteq(j);
-		printf(" c " );
+
 		for (w = (v + i)->Head; w != NULL; w = w->link)
 		{
-			printf(" c ");
-			if (visited[w->num] == NULL)
+
+			if (visited[w->num] == 0)
 			{
 				j++;
 				printf("%5d", w->num);
@@ -568,7 +569,7 @@ int deleteq(int i)
 	if (!temp)
 	{
 		printf("queue는 비어있음");
-		return;
+		return 0;
 	}
 
 	item = temp->num;
